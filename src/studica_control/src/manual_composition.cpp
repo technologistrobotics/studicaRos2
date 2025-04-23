@@ -74,8 +74,8 @@ public:
         }
         
         if (three_wheeled_drive_enabled) { //new
-            auto odom = studica_control::DiffOdometry::initialize(this); // TODO: change 
-            auto three_wheeled_drive_node = studica_control::DiffDrive::initialize(this, odom, vmx_); // TODO: change 
+            auto odom = studica_control::ThreeWheeledDriveOdometry::initialize(this); // TODO: change 
+            auto three_wheeled_drive_node = studica_control::ThreeWheeledDriveOdometry::initialize(this, odom, vmx_); // TODO: change 
             component_nodes.push_back(odom);
             component_nodes.push_back(three_wheeled_drive_node);
         }

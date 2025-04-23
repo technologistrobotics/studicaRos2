@@ -33,7 +33,7 @@ control_server:
         topic: "duty_cycle_encoder"
 
     diff_drive_component:
-      enabled: true
+      enabled: false
       name: "diff_drive_controller"
       can_id: 42
       motor_freq: 15600
@@ -47,6 +47,27 @@ control_server:
     
     diff_drive_odometry:
       name: "differential_odom"
+      use_imu: false
+      imu_topic: "imu"
+      topic: "odom"
+    
+    three_wheeled_drive_component:
+      enabled: true
+      name: "studica_drive_controller"
+      can_id: 42
+      motor_freq: 15600
+      ticks_per_rotation: 1470
+      front_port: 1
+      left_port: 2
+      right_port: 3
+      invert_front: false
+      invert_left: false
+      invert_right: false
+      wheel_radius: 0.05 # in metres
+      wheel_separation: 0.28 # in metres
+    
+    three_wheeled_drive_odometry:
+      name: "studica_odom"
       use_imu: false
       imu_topic: "imu"
       topic: "odom"
